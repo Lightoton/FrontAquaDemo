@@ -1,18 +1,20 @@
-# Этап 1: Сборка (Node.js)
-FROM node:20-alpine AS builder
-WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm install
-COPY . .
-RUN npm run build
-
 # Этап 2: Запуск (Nginx)
 FROM nginx:alpine
-# Копируем собранные файлы из папки dist (результат работы Vite) в папку Nginx
 COPY --from=builder /app/dist /usr/share/nginx/html
-# Копируем базовый конфиг Nginx для правильной работы React-роутера
+
+# Обновленный конфиг
 RUN echo 'server { \
     listen 80; \
+    # Важно: сначала проверяем API \
+    location /api { \
+        proxy_pass http://backend:8080; \
+        proxy_http_version 1.1; \
+        proxy_set_header Host $host; \
+        proxy_set_header X-Real-IP $remote_addr; \
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; \
+        proxy_set_header X-Forwarded-Proto $scheme; \
+    } \
+    # Все остальное — фронтенд \
     location / { \
         root /usr/share/nginx/html; \
         index index.html index.htm; \

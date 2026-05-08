@@ -62,7 +62,7 @@ export default function Prices() {
           </h3>
           
           <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse min-w-[500px]">
+            <table className="w-full text-left border-collapse min-w-125">
               <thead>
                 <tr className="bg-slate-50 text-slate-500 uppercase text-xs tracking-wider">
                   <th className="p-4 rounded-tl-xl font-semibold">Tarif</th>

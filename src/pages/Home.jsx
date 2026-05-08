@@ -3,7 +3,7 @@ import { Navigation, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 // Импортируем полный логотип
-import logoFull from '../assets/full-logo.png'; 
+import logoFull from '../assets/full-logo.webp'; 
 
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 30 },
@@ -26,7 +26,7 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('https://www.aquaolsberg.de/110217-aquaolsberg-de-wAssets/img/bildergalerien/freizeitbad/freibad/freibad.jpg')" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-cyan-900/70 to-slate-900/90 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-linear-to-b from-cyan-900/70 to-slate-900/90 mix-blend-multiply"></div>
         </div>
 
         <motion.div 

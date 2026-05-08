@@ -64,7 +64,7 @@ export default function App() {
                 Willkommen! Bitte beachten Sie, dass dies <span className="font-bold text-slate-800">nicht die offizielle Website</span> des AquaOlsberg ist.
               </p>
               <p className="text-slate-600 mb-8 leading-relaxed">
-                Diese Seite ist ein exklusives <span className="font-bold text-cyan-600">Proof of Concept (Demonstrationsprojekt)</span>. Sie wurde von einem Softwareentwickler konzipiert, um das Potenzial eines modernen, reaktionsschnellen Web-Auftritts наглядно показать.
+                Diese Seite ist ein exklusives <span className="font-bold text-cyan-600">Proof of Concept (Demonstrationsprojekt)</span>. Sie wurde von einem Softwareentwickler konzipiert, um das Potenzial eines modernen, reaktionsschnellen Web-Auftritts.
               </p>
               
               <button 

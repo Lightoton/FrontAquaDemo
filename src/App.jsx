@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { AlertTriangle, Menu, X, Info } from 'lucide-react';
 
-// Импортируем твой логотип с текстом для шапки и футера
+
 import logoNav from './assets/logo-nav.png'; 
 
 import Home from './pages/Home';
@@ -20,15 +20,15 @@ import Admin from './pages/Admin';
 export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
-  // ИЗМЕНЕНО: Проверяем, не находимся ли мы на странице админки
+  
   const [showDemoWarning, setShowDemoWarning] = useState(() => {
     if (typeof window !== 'undefined' && window.location.pathname.startsWith('/admin')) {
-      return false; // Отключаем предупреждение для админки
+      return false; 
     }
-    return true; // Включаем для всех остальных страниц
+    return true; 
   });
 
-  // Блокировка скролла при открытом модальном окне
+  
   useEffect(() => {
     if (showDemoWarning) {
       document.body.style.overflow = 'hidden';
